@@ -1,0 +1,16 @@
+{
+  "resourceName": "images",
+  "policyUUID": "c4c916d6",
+  "bucketName": "reactecommercebd5a4cd34f724ee69db463ad39352898",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

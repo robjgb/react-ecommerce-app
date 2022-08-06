@@ -1,21 +1,22 @@
 import React, { useContext } from 'react'
 import { Link } from "react-router-dom";
-import { BookContext } from '../context/books';
+import { ProductContext } from '../context/products';
 
 
 const Books = () => {
-    const { books } = useContext(BookContext);
+    const { products } = useContext(ProductContext);
+    console.log(products)
 
-    if (!books.length) {
-        return <h3>No Books Available</h3>
+    if (!products.length) {
+        return <h3>No Products Available</h3>
     }
 
     return (
         <section className="books">
-            {books.map(({ image: image, id, title }) => (
+            {products.map(({ image: image, id, name }) => (
                 <article key={id} className="book">
                     <div className="book-image">
-                        <img src={image} alt={title} />
+                        <img src={image} alt={name} />
                     </div>
                     <Link to={`books/${id}`} className="btn book-link">details</Link>
                 </article>

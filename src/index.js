@@ -1,17 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BookProvider } from "./context/books";
+import ReactDOM from 'react-dom/client';
+import { ProductProvider } from "./context/products";
 import App from './App';
-import './index.css';
-import { CartProvider } from './context/cart';
+import './globals.css';
+import { StateContext } from './context/StateContext';
+import { BannerProvider } from './context/banner';
 
-ReactDOM.render(
-  <BookProvider>
-    <CartProvider>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </CartProvider>
-  </BookProvider>,
-  document.getElementById('root')
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <StateContext>
+  <ProductProvider>
+    <BannerProvider> 
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+    </BannerProvider> 
+  </ProductProvider>
+  </StateContext>,
 );

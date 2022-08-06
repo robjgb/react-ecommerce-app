@@ -1,34 +1,44 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import Hero from "../components/Hero";
+import React from 'react'
+import { useContext } from 'react'
+import { Product, FooterBanner, HeroBanner } from '../components' 
+import { BannerContext } from '../context/banner';
+import { ProductContext } from '../context/products';
 
-import { BookContext } from "../context/books";
 
 const Home = () => {
-    const { featured } = useContext(BookContext);
-    if (!featured.length) {
-        return <h3>No Featured Books</h3>
+  const { banner } = useContext(BannerContext);
+  const { featured } = useContext(ProductContext);
+
+  if (!featured.length) {
+    return <div></div>
+  }
+  return (
+    <>
+    {banner.length === 0? 
+    <div></div> :     
+    <HeroBanner heroBanner={banner && banner[0]}/>
     }
-    return (
-        <>
-            <Hero />
-            <section className="featured">
-                <header className="featured-head">
-                    <h3>Featured Collection</h3>
-                </header>
-                <div className="books featured-list">
-                    {featured.map(({ id, image, title }) => (
-                        <article key={id} className="book featured-book">
-                            <div className="book-image">
-                                <img src={image} alt={title} />
-                            </div>
-                            <Link to={`books/${id}`} className="btn book-link">details</Link>
-                        </article>
-                    ))}
-                </div>
-            </section>
-        </>
-    )
+
+    <div className='products-heading'> 
+      <h2>Featured Items</h2>
+      <p> Check out these popular items</p>
+    </div> 
+
+    {featured.length === 0? 
+    <div> No featured items </div> : 
+    <>
+    <div className='products-container'>
+      {featured?.map(
+        (product) => <Product key={product.id} product={product}/>)}
+    </div>
+    </>
+    }
+    {banner.length === 0? 
+    <div></div> :     
+    <FooterBanner footerBanner={banner && banner[0]}/>
+    }
+    </>
+  )
 }
 
-export default Home;
+export default Home

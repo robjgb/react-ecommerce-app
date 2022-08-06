@@ -89,6 +89,9 @@ export const listProducts = /* GraphQL */ `
         author
         featured
         price
+        orders {
+          nextToken
+        }
         createdAt
         updatedAt
       }
@@ -134,8 +137,8 @@ export const listBanners = /* GraphQL */ `
         discount
         saleTime
         id
-        # createdAt
-        # updatedAt
+        createdAt
+        updatedAt
       }
       nextToken
     }

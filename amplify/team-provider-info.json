@@ -1,0 +1,31 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-reactecommerce-dev-164411-authRole",
+      "UnauthRoleArn": "arn:aws:iam::063606457877:role/amplify-reactecommerce-dev-164411-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::063606457877:role/amplify-reactecommerce-dev-164411-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-reactecommerce-dev-164411-deployment",
+      "UnauthRoleName": "amplify-reactecommerce-dev-164411-unauthRole",
+      "StackName": "amplify-reactecommerce-dev-164411",
+      "StackId": "arn:aws:cloudformation:us-west-1:063606457877:stack/amplify-reactecommerce-dev-164411/585809d0-144f-11ed-aa60-028554346c93",
+      "AmplifyAppId": "d2eo1gurialvz9"
+    },
+    "categories": {
+      "auth": {
+        "reactecommerce3177cf65": {},
+        "true": {}
+      },
+      "function": {
+        "paymentProcess": {
+          "deploymentBucketName": "amplify-reactecommerce-dev-164411-deployment",
+          "s3Key": "amplify-builds/paymentProcess-59735a5067544252794b-build.zip"
+        },
+        "orderCreation": {
+          "deploymentBucketName": "amplify-reactecommerce-dev-164411-deployment",
+          "s3Key": "amplify-builds/orderCreation-77766239343274356d37-build.zip"
+        }
+      }
+    }
+  }
+}
